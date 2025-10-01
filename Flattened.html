@@ -12,9 +12,20 @@
         body {
             font-family: 'Inter', sans-serif;
             background-color: #f7f9fb;
+            display: flex; /* Added for centering */
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
         }
         .slide {
             transition: opacity 0.5s ease-in-out;
+            min-height: 70vh; /* Adjusted for single slide */
+            display: none;
+            padding: 2rem;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        .slide.active {
+            display: block;
         }
         /* Custom styling for content boxes */
         .content-box {
@@ -49,13 +60,18 @@
 <body class="p-4 md:p-8 min-h-screen flex items-center justify-center">
 
     <div id="presentation-container" class="w-full max-w-4xl bg-white rounded-xl shadow-2xl overflow-hidden p-6 md:p-10">
+        
+        <header class="text-center mb-6">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-green-700">Research Focus: Flattened Musk Turtle</h1>
+            <p class="text-lg text-gray-600 mt-2">Alabama Endemic Species</p>
+        </header>
 
         <!-- Slide Container -->
         <div id="slides" class="relative">
 
-            <!-- Slide 1: Introduction and Status -->
-            <div id="slide-1" class="slide" data-title="Species Overview">
-                <h1 class="text-4xl font-extrabold text-green-700 mb-4 border-b-4 border-green-500 pb-2">1. The Flattened Musk Turtle (Sternotherus depressus)</h1>
+            <!-- Slide 1: Introduction and Status (IMAGE ADDED HERE) -->
+            <div id="slide-1" class="slide active" data-title="Species Overview">
+                <h1 class="text-4xl font-extrabold text-green-700 mb-4 border-b-4 border-green-500 pb-2">1. The Flattened Musk Turtle ($Sternotherus$ $depressus$)</h1>
                 <div class="grid md:grid-cols-2 gap-8 items-center">
                     <div>
                         <p class="text-lg mb-4">The Flattened Musk Turtle is one of Alabama's most unique and imperiled reptiles. It is endemic, meaning it is found nowhere else in the world.</p>
@@ -70,10 +86,16 @@
                         </div>
                     </div>
                     <div>
-                        <div class="image-placeholder rounded-lg">
-                            
-                            <br>
-                            *Placeholder for high-quality turtle image.*
+                        <!-- IMAGE REPLACEMENT: The image is now loaded directly from the provided URL. -->
+                        <div class="rounded-xl overflow-hidden shadow-lg">
+                            <img src="https://encyclopediaofalabama.org/wp-content/uploads/2023/04/Juvenile-Flattened-Musk-Turtle.jpg" 
+                                 alt="Juvenile Flattened Musk Turtle" 
+                                 class="w-full h-auto"
+                                 onerror="this.onerror=null; this.src='https://placehold.co/400x300/e2e8f0/4a5568?text=Image+Load+Error';"
+                            >
+                            <p class="text-sm text-gray-500 p-2 text-center bg-gray-100">
+                                Juvenile Flattened Musk Turtle
+                            </p>
                         </div>
                     </div>
                 </div>

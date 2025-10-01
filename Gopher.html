@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gopher Tortoise: Keystone Species of Alabama</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Set Inter font */
+        html { font-family: 'Inter', sans-serif; }
+        /* Custom styles for the slide area */
+        .slide-container {
+            min-height: 80vh;
+            background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        .slide-content {
+            opacity: 0;
+            transform: translateY(10px);
+            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+            pointer-events: none;
+        }
+        .slide-content.active {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+        /* Custom styling for the navigation buttons */
+        .nav-btn {
+            background-color: #059669; /* Emerald 600 */
+            transition: background-color 0.2s, transform 0.1s;
+        }
+        .nav-btn:hover {
+            background-color: #047857; /* Emerald 700 */
+            transform: scale(1.05);
+        }
+        .nav-btn:disabled {
+            background-color: #d1fae5; /* Emerald 100 */
+            color: #10b981; /* Emerald 500 */
+            cursor: not-allowed;
+            transform: none;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 p-4 md:p-8 flex flex-col items-center min-h-screen">
+
+    <div id="presentation" class="w-full max-w-4xl rounded-xl p-6 md:p-10 slide-container">
+
+        <!-- SLIDE NAVIGATION CONTROLS -->
+        <div class="flex justify-center space-x-4 mb-6">
+            <button id="prevBtn" class="nav-btn text-white font-semibold py-2 px-4 rounded-lg shadow-md" onclick="changeSlide(-1)" disabled>
+                &larr; Previous
+            </button>
+            <button id="nextBtn" class="nav-btn text-white font-semibold py-2 px-4 rounded-lg shadow-md" onclick="changeSlide(1)">
+                Next &rarr;
+            </button>
+        </div>
+
+        <!-- SLIDE CONTAINER -->
+        <div id="slides" class="relative overflow-hidden">
+            <!-- Slide 1: Title Slide -->
+            <div id="slide-1" class="slide-content active absolute w-full top-0 left-0 p-4">
+                <div class="text-center">
+                    <h1 class="text-4xl md:text-5xl font-extrabold text-gray-800 mb-4">Gopher Tortoise (<span class="italic">Gopherus polyphemus</span>)</h1>
+                    <h2 class="text-xl md:text-2xl font-semibold text-emerald-600 mb-6">Alabama's Keystone Species</h2>
+                    <p class="text-gray-600 text-lg">Research for High School AI Tracking Model</p>
+                    <img src="https://placehold.co/800x450/10b981/ffffff?text=Gopher+Tortoise+in+Longleaf+Pine+Habitat" alt="Placeholder image of a Gopher Tortoise in its habitat." class="mt-8 rounded-lg shadow-lg mx-auto w-full md:w-3/4">
+                </div>
+            </div>
+
+            <!-- Slide 2: Species Facts & Locomotion -->
+            <div id="slide-2" class="slide-content absolute w-full top-0 left-0 p-4">
+                <h2 class="text-3xl font-bold text-gray-700 mb-4 border-b-2 border-emerald-400 pb-2">1. Species Facts & Movement</h2>
+                <div class="md:flex md:space-x-8">
+                    <div class="md:w-1/2">
+                        <ul class="list-disc list-inside text-lg text-gray-700 space-y-3">
+                            <li><span class="font-semibold text-emerald-600">Keystone Species:</span> Their deep burrows provide critical shelter for around 360 other species.</li>
+                            <li><span class="font-semibold text-emerald-600">Physical Size:</span> Typically 9 to 15 inches long.</li>
+                            <li><span class="font-semibold text-emerald-600">Lifespan:</span> Can live 40-60 years in the wild.</li>
+                            <li><span class="font-semibold text-emerald-600">Uniqueness:</span> The only tortoise species found naturally east of the Mississippi River.</li>
+                            <li><span class="font-semibold text-emerald-600">Status:</span> Federally listed as Threatened west of the Mobile and Tombigbee Rivers in Alabama.</li>
+                        </ul>
+                    </div>
+                    <div class="md:w-1/2 mt-6 md:mt-0">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Locomotion & Burrowing</h3>
+                        <ul class="list-disc list-inside text-lg text-gray-700 space-y-3">
+                            <li><span class="font-semibold">Adaptations:</span> Uses flattened, shovel-like forelimbs for digging and sturdy, elephantine hind limbs for walking.</li>
+                            <li><span class="font-semibold">Time Spent:</span> They are diurnal (active during the day) but spend up to <span class="text-red-600 font-bold">80% of their time</span> inside their burrows to regulate temperature and humidity.</li>
+                            <li><span class="font-semibold">Burrow Size:</span> Burrows average 15-20 feet long and 6.5 feet deep, but can reach 40 feet long and 10 feet deep.</li>
+                            <li><span class="font-semibold">Foraging Range:</span> Typically forage for grasses, forbs, and fruits within 160 feet of their burrow entrance.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 3: Habitat & Alabama Distribution -->
+            <div id="slide-3" class="slide-content absolute w-full top-0 left-0 p-4">
+                <h2 class="text-3xl font-bold text-gray-700 mb-4 border-b-2 border-emerald-400 pb-2">2. Habitat & Alabama Distribution</h2>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Ideal Habitat Requirements</h3>
+                        <p class="text-lg text-gray-700 mb-3">Gopher tortoises require three key conditions, often met by the Longleaf Pine Ecosystem:</p>
+                        <ul class="list-disc list-inside text-lg text-gray-700 space-y-2">
+                            <li><span class="font-semibold">Soil:</span> Well-drained, deep sandy soils for easy burrow excavation.</li>
+                            <li><span class="font-semibold">Canopy:</span> Open tree canopy (sparse coverage) to allow sunlight for basking, nesting, and plant growth (for forage).</li>
+                            <li><span class="font-semibold">Management:</span> Frequent prescribed fire is the single most important tool to maintain open canopy and ground cover.</li>
+                        </ul>
+                        <img src="https://placehold.co/400x200/52c41a/ffffff?text=Longleaf+Pine+Ecosystem" alt="Placeholder image of a Longleaf Pine Forest" class="mt-4 rounded-lg shadow-md w-full">
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Location in Alabama</h3>
+                        <p class="text-lg text-gray-700 mb-3">Found primarily in the lower third of the state (Coastal Plains region).</p>
+                        <ul class="list-disc list-inside text-lg text-gray-700 space-y-2">
+                            <li><span class="font-semibold">Physiographic Region:</span> Coastal Plains (below the Fall Line).</li>
+                            <li><span class="font-semibold">Key Counties:</span> Found in over 20 counties, including Mobile, Baldwin, Conecuh, Escambia, and Houston.</li>
+                            <li><span class="font-semibold">Major Populations:</span> Conecuh National Forest and Fort Rucker Military Base house the largest known populations.</li>
+                        </ul>
+                        <img src="https://placehold.co/400x200/10b981/ffffff?text=Alabama+Coastal+Plain+Map" alt="Placeholder map showing Gopher Tortoise range in Alabama" class="mt-4 rounded-lg shadow-md w-full">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 4: Nesting Habits & Reproduction -->
+            <div id="slide-4" class="slide-content absolute w-full top-0 left-0 p-4">
+                <h2 class="text-3xl font-bold text-gray-700 mb-4 border-b-2 border-emerald-400 pb-2">3. Reproduction & Nesting Habits</h2>
+                <div class="md:flex md:space-x-8">
+                    <div class="md:w-1/2">
+                        <ul class="list-disc list-inside text-lg text-gray-700 space-y-3">
+                            <li><span class="font-semibold text-emerald-600">Nesting Season:</span> Late April to mid-July. Females lay only one clutch per year.</li>
+                            <li><span class="font-semibold text-emerald-600">Clutch Size:</span> Typically 5 to 9 eggs (up to 15). Eggs are about the size of a ping-pong ball.</li>
+                            <li><span class="font-semibold text-emerald-600">Nest Location:</span> Nests are frequently dug into the soft sand of the <span class="font-bold italic">burrow apron</span>—the mound of loose sand right outside the entrance.</li>
+                            <li><span class="font-semibold text-emerald-600">Incubation:</span> Eggs hatch after 100-110 days, with hatchlings emerging from late August through November.</li>
+                            <li><span class="font-semibold text-emerald-600">Sex Determination:</span> Like some other reptiles, the sex of the hatchlings is determined by the temperature of the nest (Temperature-dependent Sex Determination).</li>
+                        </ul>
+                    </div>
+                    <div class="md:w-1/2 mt-6 md:mt-0">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">The Burrow Apron (Key Sign)</h3>
+                        <p class="text-gray-700">The apron is the most visible sign of a tortoise. It's the fan-shaped deposit of sand excavated by the tortoise. The nesting female prefers this open, sunny spot, making the apron a key area for surveying and identifying nesting behavior.</p>
+                        <img src="https://placehold.co/400x200/15803d/ffffff?text=Diagram+of+Tortoise+Burrow+and+Apron" alt="Placeholder diagram of a Gopher Tortoise burrow and apron." class="mt-4 rounded-lg shadow-md w-full">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 5: Tracking Model Data Points -->
+            <div id="slide-5" class="slide-content absolute w-full top-0 left-0 p-4">
+                <h2 class="text-3xl font-bold text-gray-700 mb-4 border-b-2 border-emerald-400 pb-2">4. Data for Tracking Models</h2>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Track & Footprint Analysis</h3>
+                        <p class="text-lg text-gray-700">Gopher tortoise tracks are distinctive due to their shovel-like front feet. The tracks can be used for modeling, particularly near burrows and foraging trails.</p>
+                        <ul class="list-disc list-inside text-gray-700 mt-2 space-y-1">
+                            <li><span class="font-semibold">Track Shape:</span> Front feet tracks are broad and fan-like; hind feet tracks are more elephantine and stubby.</li>
+                            <li><span class="font-semibold">Key Feature:</span> Look for the distinctive drag mark from the plastron (bottom shell) or the shovel shape of the forelimbs in soft sand.</li>
+                            <li><span class="font-semibold">Model Input:</span> Tracks, scat (feces), and the size/orientation of the burrow apron are common inputs for occupancy and density models.</li>
+                        </ul>
+                        <!-- IMPORTANT: Use a placeholder and note to the student to search for the specific image -->
+                        <img src="https://placehold.co/400x200/99f6e4/134e4a?text=Mock+Up+Gopher+Tortoise+Track+in+Sand" alt="Placeholder image for Gopher Tortoise Footprint or Track" class="mt-4 rounded-lg shadow-md w-full">
+                        <p class="text-sm italic text-gray-500 mt-1">Search Query for specific images: "Gopher Tortoise footprint track identification"</p>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Modern Tracking Technology</h3>
+                        <p class="text-lg text-gray-700">AI/GIS models rely on data collected from high-tech sources:</p>
+                        <ul class="list-disc list-inside text-gray-700 space-y-2">
+                            <li><span class="font-semibold">GPS/Radio Telemetry:</span> Small transmitters attached to the shell track real-time movement and home range, giving data on seasonal migration.</li>
+                            <li><span class="font-semibold">Remote Sensing (LiDAR):</span> Used to map optimal habitat features like canopy height and soil type across large areas.</li>
+                            <li><span class="font-semibold">Citizen Science Apps:</span> Public reporting (with photos and GPS) helps researchers track sightings and burrows for large-scale distribution mapping.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 6: Resources & Videos -->
+            <div id="slide-6" class="slide-content absolute w-full top-0 left-0 p-4">
+                <h2 class="text-3xl font-bold text-gray-700 mb-4 border-b-2 border-emerald-400 pb-2">5. Additional Resources & Videos</h2>
+                <p class="text-lg text-gray-700 mb-6">Use these links to find videos and conservation guides for deeper research.</p>
+
+                <div class="space-y-4">
+                    <div class="p-4 bg-white rounded-lg shadow-md">
+                        <h3 class="text-xl font-semibold text-emerald-600 mb-2">Conservation & Facts</h3>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1">
+                            <li><a href="https://www.outdooralabama.com/turtles/gopher-tortoise" target="_blank" class="text-blue-600 hover:underline">Gopher Tortoise Facts | Outdoor Alabama</a> - State-specific information on laws and ecology.</li>
+                            <li><a href="https://www.nature.org/en-us/get-involved/how-to-help/animals-we-protect/gopher-tortoise/" target="_blank" class="text-blue-600 hover:underline">Gopher Tortoise Facts and Conservation | The Nature Conservancy</a> - Details on their status as a keystone species and habitat needs.</li>
+                            <li><a href="https://www.fws.gov/sites/default/files/documents/Gopher%20Tortoise%20Survey%20Handbook.pdf" target="_blank" class="text-blue-600 hover:underline">Gopher Tortoise Survey Handbook (PDF)</a> - Detailed methods (like LTDS) used for population surveys by the U.S. Fish and Wildlife Service.</li>
+                        </ul>
+                    </div>
+
+                    <div class="p-4 bg-white rounded-lg shadow-md">
+                        <h3 class="text-xl font-semibold text-emerald-600 mb-2">Educational Videos (YouTube)</h3>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1">
+                            <li><a href="https://www.youtube.com/watch?v=7U_-esxGNVg" target="_blank" class="text-blue-600 hover:underline">Gopher Tortoises: Why This Keystone Species Is Crucial to the Environment</a> - Visual guide on their importance.</li>
+                            <li><a href="https://www.youtube.com/watch?v=anC8mjIhbPg" target="_blank" class="text-blue-600 hover:underline">Hunters' Guide to Protecting Gopher Tortoises</a> - Shows how to recognize burrows and avoid harm in the field.</li>
+                            <li><a href="https://www.youtube.com/watch?v=jPydxZUcMsA" target="_blank" class="text-blue-600 hover:underline">Gopher Tortoise: Ecosystem Engineer</a> - Explains the burrow network and its function.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+             <!-- Slide 7: Conclusion -->
+            <div id="slide-7" class="slide-content absolute w-full top-0 left-0 p-4">
+                <div class="text-center py-10">
+                    <h2 class="text-4xl font-extrabold text-gray-800 mb-4">Project Conclusion</h2>
+                    <p class="text-2xl text-emerald-600 mb-6">Your Data Collection Checklist</p>
+
+                    <div class="mx-auto w-full md:w-3/4 p-6 bg-white rounded-xl shadow-lg">
+                        <ul class="list-none text-left text-xl text-gray-700 space-y-3">
+                            <li class="flex items-center"><span class="text-3xl mr-3 text-emerald-500">&check;</span> Gopher Tortoises are reliant on sandy Longleaf Pine habitats.</li>
+                            <li class="flex items-center"><span class="text-3xl mr-3 text-emerald-500">&check;</span> <span class="font-bold">Burrow Aprons</span> are the primary field sign for population surveys.</li>
+                            <li class="flex items-center"><span class="text-3xl mr-3 text-emerald-500">&check;</span> Their specialized feet create distinct tracks in soft sand.</li>
+                            <li class="flex items-center"><span class="text-3xl mr-3 text-emerald-500">&check;</span> Movement data is collected via <span class="font-bold">Telemetry/GPS</span> (range is usually < $160$ ft from burrow).</li>
+                        </ul>
+                    </div>
+                    <p class="text-xl text-gray-600 mt-8">Good luck creating your tracking model!</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        const slides = document.querySelectorAll('.slide-content');
+        let currentSlide = 1;
+        const totalSlides = slides.length;
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+
+        /**
+         * Updates the visibility and state of the slides and navigation buttons.
+         * @param {number} index - The index of the slide to display (1-based).
+         */
+        function updateSlideDisplay(index) {
+            // Deactivate all slides
+            slides.forEach(slide => {
+                slide.classList.remove('active');
+                slide.style.position = 'absolute';
+                slide.style.visibility = 'hidden';
+            });
+
+            // Activate the current slide
+            const activeSlide = document.getElementById(`slide-${index}`);
+            if (activeSlide) {
+                activeSlide.classList.add('active');
+                activeSlide.style.position = 'relative'; // Make the active slide take up space
+                activeSlide.style.visibility = 'visible';
+            }
+
+            // Update button states
+            prevBtn.disabled = index === 1;
+            nextBtn.disabled = index === totalSlides;
+        }
+
+        /**
+         * Changes the current slide by a relative amount.
+         * @param {number} delta - -1 for previous, 1 for next.
+         */
+        function changeSlide(delta) {
+            const newIndex = currentSlide + delta;
+            if (newIndex >= 1 && newIndex <= totalSlides) {
+                currentSlide = newIndex;
+                updateSlideDisplay(currentSlide);
+            }
+        }
+
+        // Initialize the presentation on load
+        window.onload = function() {
+            // Ensure all slides except the first are initially hidden and positioned absolutely
+            slides.forEach((slide, index) => {
+                if (index !== 0) {
+                    slide.style.position = 'absolute';
+                    slide.style.visibility = 'hidden';
+                }
+            });
+            updateSlideDisplay(currentSlide);
+        };
+    </script>
+</body>
+</html>

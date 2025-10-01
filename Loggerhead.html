@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loggerhead Sea Turtle Research</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'turtle-green': '#008080',
+                        'sand-yellow': '#F4E7D0',
+                        'ocean-blue': '#104e8b',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom CSS for visual appeal */
+        body {
+            background-color: #F4E7D0; /* Sand background */
+            font-family: 'Inter', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+        }
+        .slide-container {
+            transition: opacity 0.5s ease-in-out;
+            min-height: 85vh; /* Ensure container is tall enough */
+        }
+        .slide {
+            display: none;
+            padding: 2rem;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        .slide.active {
+            display: block;
+        }
+        .nav-button {
+            transition: background-color 0.3s, transform 0.1s;
+        }
+        .nav-button:hover {
+            transform: translateY(-2px);
+        }
+        .fact-card {
+            background-color: #ffffff;
+            border-left: 4px solid #008080;
+        }
+        .slide-title {
+            color: #104e8b;
+        }
+        .resource-link {
+            color: #008080;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body class="p-4 sm:p-8">
+
+    <div id="presentation-app" class="w-full max-w-4xl bg-white rounded-xl shadow-2xl overflow-hidden p-6 sm:p-10">
+
+        <!-- Header -->
+        <header class="text-center mb-6">
+            <h1 class="text-3xl sm:text-4xl font-extrabold slide-title">Endangered Alabama Turtles: Loggerhead Sea Turtle</h1>
+            <p class="text-lg text-gray-600 mt-2">AI Class Research Project (High School Level)</p>
+        </header>
+
+        <!-- Slide Container -->
+        <div id="slide-container" class="slide-container">
+
+            <!-- Slide 1: Introduction -->
+            <div id="slide-1" class="slide active">
+                <h2 class="text-2xl font-bold mb-4 slide-title">1. Overview: The Loggerhead ($Caretta$ $caretta$)</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+                    <div>
+                        <p class="text-gray-700 leading-relaxed mb-4">
+                            The Loggerhead sea turtle is named for its massive head and powerful jaws, adapted for crushing the shells of prey. It is the most common sea turtle species to nest on Alabama's beaches and is listed as <span class="font-semibold text-red-600">Threatened</span> by the U.S. Fish and Wildlife Service.
+                        </p>
+                        <div class="fact-card p-4 rounded-lg mt-4">
+                            <h3 class="font-semibold text-lg mb-2">Key Statistics</h3>
+                            <ul class="list-disc list-inside text-gray-700">
+                                <li>Average Adult Weight: $113$ kg ($250$ lb)</li>
+                                <li>Average Carapace Length: Up to $92$ cm ($36$ in)</li>
+                                <li>Status: Threatened (Nationally); Highest Conservation Concern (Alabama)</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="rounded-xl overflow-hidden shadow-lg">
+                        <img src="https://placehold.co/600x400/008080/ffffff?text=Loggerhead+Sea+Turtle+Profile" alt="Placeholder image of a Loggerhead Sea Turtle." class="w-full h-auto" onerror="this.onerror=null; this.src='https://placehold.co/600x400/008080/ffffff?text=Loggerhead+Sea+Turtle+Profile'">
+                        <!-- You can replace this placeholder with a direct image URL if you find a suitable, license-free image. -->
+                        <p class="text-sm text-gray-500 p-2 text-center">
+                             
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 2: Habitat & Alabama Range -->
+            <div id="slide-2" class="slide">
+                <h2 class="text-2xl font-bold mb-4 slide-title">2. Habitat & Alabama Range</h2>
+                <div class="space-y-4 text-gray-700">
+                    <p>Loggerheads are widely distributed across the Atlantic, Pacific, and Indian Oceans. They primarily inhabit continental shelf waters, including bays, lagoons, salt marshes, and estuaries where they can forage for food.</p>
+
+                    <h3 class="font-semibold text-xl mt-4 text-ocean-blue">Where They Are Found in Alabama</h3>
+                    <p class="bg-sand-yellow p-4 rounded-lg">
+                        In Alabama, Loggerheads are the **most abundant** sea turtle species found in coastal waters. Their nesting occurs along the Gulf Coast beaches located in **Baldwin and Mobile counties**, specifically from the Florida border west to Dauphin Island. The majority of nesting is concentrated between Fort Morgan and Gulf Shores. 
+                    </p>
+
+                    <h3 class="font-semibold text-xl mt-4 text-ocean-blue">Diet</h3>
+                    <p>As strong carnivores, their large heads and powerful jaws are perfect for eating hard-shelled prey like conch, whelks, crabs, clams, and shrimp. Juveniles often eat jellyfish and floating mollusks.</p>
+                </div>
+            </div>
+
+            <!-- Slide 3: Nesting Habits -->
+            <div id="slide-3" class="slide">
+                <h2 class="text-2xl font-bold mb-4 slide-title">3. Nesting and Reproduction</h2>
+                <div class="space-y-4 text-gray-700">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <h3 class="font-semibold text-xl mt-2 text-ocean-blue">Nesting Season in Alabama</h3>
+                            <p>
+                                The Alabama sea turtle nesting and hatching season is typically from **May 1st to October 31st.** Females come ashore primarily at night during this period.
+                            </p>
+                            <h3 class="font-semibold text-xl mt-4 text-ocean-blue">The Nesting Process</h3>
+                            <ul class="list-disc list-inside ml-4 mt-2 space-y-2">
+                                <li>A female may nest between $1$ and $7$ times within a single nesting season, with an average of $4$ to $5$ nests.</li>
+                                <li>She returns to the beach at intervals of approximately $14$ days to lay a new clutch.</li>
+                                <li>The incubation period is temperature-dependent, usually ranging from $55$ to $60$ days.</li>
+                                <li>Hatchlings usually emerge at night and use moonlight/starlight to orient themselves toward the sea.</li>
+                            </ul>
+                        </div>
+                        <div class="rounded-xl overflow-hidden shadow-lg">
+                            <img src="https://placehold.co/600x400/F4E7D0/000000?text=Sea+Turtle+Nest+Marker" alt="Placeholder image of a marked sea turtle nest." class="w-full h-auto" onerror="this.onerror=null; this.src='https://placehold.co/600x400/F4E7D0/000000?text=Sea+Turtle+Nest+Marker'">
+                            <p class="text-sm text-gray-500 p-2 text-center">
+                                
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 4: Locomotion & Tracking Model Resources -->
+            <div id="slide-4" class="slide">
+                <h2 class="text-2xl font-bold mb-4 slide-title">4. Locomotion & Tracking Model Resources</h2>
+                <div class="space-y-4 text-gray-700">
+                    <h3 class="font-semibold text-xl mt-2 text-ocean-blue">Movement on Land: Creating the Track</h3>
+                    <p>
+                        Only female sea turtles come ashore to nest. They pull their heavy bodies through the sand using their front flippers in an **alternating (or asynchronous) motion**.
+                    </p>
+                    <div class="fact-card p-4 rounded-lg mt-4">
+                        <p class="font-semibold text-lg mb-1 text-turtle-green">Loggerhead Track Characteristics:</p>
+                        <ul class="list-disc list-inside ml-4">
+                            <li>**Alternating Marks:** The flipper scoop marks on one side do **not** line up evenly with the marks on the opposite side.</li>
+                            <li>**Comma Shape:** The flipper marks are typically deep and comma-shaped.</li>
+                            <li>**Tail Drag:** A distinguishable, thin, sinuous line is often present down the center, left by the turtle's tail.</li>
+                        </ul>
+                    </div>
+
+                    <h3 class="font-semibold text-xl mt-4 text-ocean-blue">Resources for Tracking Models</h3>
+                    <p>To help with your AI tracking model, here are links to visual track resources and satellite tracking data:</p>
+                    <ul class="list-disc list-inside ml-4 mt-2 space-y-1">
+                        <li>**Footprint Image (Example):** <a href="https://commons.wikimedia.org/wiki/File:Footprint_of_Loggerhead_Sea_Turtle.jpg" target="_blank" class="resource-link">Wikimedia Commons Loggerhead Footprint</a> (Good for pattern recognition in sand).</li>
+                        <li>**Track Identification Diagram:** <a href="https://www.conservationtales.com/turtle-tracks.html" target="_blank" class="resource-link">Conservation Tales - Identifying Turtle Tracks</a> (Details the alternating vs. synchronous patterns).</li>
+                        <li>**Satellite Tracking Data:** <a href="https://sos.noaa.gov/catalog/datasets/loggerhead-sea-turtle-tracks/" target="_blank" class="resource-link">NOAA Science on a Sphere Loggerhead Tracks</a> (Useful for analyzing migration patterns, size, and temperature gradients).</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Slide 5: Additional Resources & Videos -->
+            <div id="slide-5" class="slide">
+                <h2 class="text-2xl font-bold mb-4 slide-title">5. Conservation & Media Resources</h2>
+                <div class="space-y-4 text-gray-700">
+                    <h3 class="font-semibold text-xl mt-2 text-ocean-blue">Key Conservation Threats</h3>
+                    <p>The primary threats to Loggerheads include:</p>
+                    <ul class="list-disc list-inside ml-4 mt-2 space-y-1">
+                        <li>**Bycatch:** Unintended capture and drowning in commercial fishing gear (trawls, longlines).</li>
+                        <li>**Habitat Loss:** Coastal development and beachfront lighting (which disorients hatchlings).</li>
+                        <li>**Vessel Strikes:** Collisions with boats, especially in shallow coastal foraging areas.</li>
+                    </ul>
+
+                    <h3 class="font-semibold text-xl mt-4 text-ocean-blue">Videos & Further Information</h3>
+                    <p>These links provide visual context for habitat, rescue, and satellite tracking:</p>
+                    <ul class="list-disc list-inside ml-4 mt-2 space-y-2">
+                        <li>**Video: NOAA Loggerhead Videos:** <a href="https://videos.fisheries.noaa.gov/detail/video/6168058167001/meet-joy-our-young-loggerhead-turtle?autoStart=true&q=sea%20turtles" target="_blank" class="resource-link">"Meet Joy, Our Young Loggerhead Turtle"</a> (NOAA Fisheries).</li>
+                        <li>**Video: Rehabilitation:** <a href="https://www.youtube.com/watch?v=8bSR0xS06Ik" target="_blank" class="resource-link">Rehabilitating a Stranded Loggerhead Turtle</a> (Wildlife Warriors - great for movement/health observation).</li>
+                        <li>**Organization:** <a href="https://www.joinacf.org/about-sea-turtles" target="_blank" class="resource-link">Alabama Coastal Foundation (ACF)</a> (Local conservation efforts).</li>
+                        <li>**Resource: NOAA Species Profile:** <a href="https://www.fisheries.noaa.gov/species/loggerhead-turtle" target="_blank" class="resource-link">NOAA Fisheries Loggerhead Profile</a> (Detailed species information).</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Navigation Controls -->
+        <div class="flex justify-between mt-8 p-4 bg-gray-50 rounded-lg">
+            <button id="prev-button" class="nav-button px-6 py-2 bg-ocean-blue text-white font-semibold rounded-full shadow-md hover:bg-turtle-green disabled:bg-gray-300 disabled:cursor-not-allowed" disabled>
+                &larr; Previous
+            </button>
+            <span id="slide-indicator" class="text-lg font-medium text-gray-700 self-center">Slide 1 of 5</span>
+            <button id="next-button" class="nav-button px-6 py-2 bg-ocean-blue text-white font-semibold rounded-full shadow-md hover:bg-turtle-green">
+                Next &rarr;
+            </button>
+        </div>
+
+    </div>
+
+    <script>
+        // JavaScript for Slide Logic
+        const slides = document.querySelectorAll('.slide');
+        const nextButton = document.getElementById('next-button');
+        const prevButton = document.getElementById('prev-button');
+        const slideIndicator = document.getElementById('slide-indicator');
+        let currentSlide = 0;
+
+        /**
+         * Updates the display state of all slides, showing only the active one.
+         */
+        function updateSlideDisplay() {
+            slides.forEach((slide, index) => {
+                slide.classList.remove('active');
+                if (index === currentSlide) {
+                    slide.classList.add('active');
+                    slide.focus(); // Focus on the new slide for accessibility
+                }
+            });
+            updateControls();
+        }
+
+        /**
+         * Updates the state of the navigation buttons and the slide indicator.
+         */
+        function updateControls() {
+            prevButton.disabled = currentSlide === 0;
+            nextButton.disabled = currentSlide === slides.length - 1;
+            slideIndicator.textContent = `Slide ${currentSlide + 1} of ${slides.length}`;
+        }
+
+        /**
+         * Advances to the next slide.
+         */
+        function nextSlide() {
+            if (currentSlide < slides.length - 1) {
+                currentSlide++;
+                updateSlideDisplay();
+            }
+        }
+
+        /**
+         * Moves to the previous slide.
+         */
+        function prevSlide() {
+            if (currentSlide > 0) {
+                currentSlide--;
+                updateSlideDisplay();
+            }
+        }
+
+        // Event Listeners for Navigation
+        nextButton.addEventListener('click', nextSlide);
+        prevButton.addEventListener('click', prevSlide);
+
+        // Optional: Keyboard navigation (right/left arrows)
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'ArrowRight') {
+                nextSlide();
+            } else if (event.key === 'ArrowLeft') {
+                prevSlide();
+            }
+        });
+
+        // Initialize the presentation
+        window.onload = updateSlideDisplay;
+    </script>
+</body>
+</html>

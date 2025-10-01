@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alabama Red-Bellied Turtle Research</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configure Tailwind to use Inter font -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            overflow: hidden; /* Hide overflow from slides */
+        }
+        .slide {
+            min-height: 100vh;
+            width: 100vw;
+            flex-shrink: 0;
+            transition: transform 0.5s ease-in-out;
+            background-color: white;
+            padding: 4rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .slide-container {
+            display: flex;
+            width: 600vw; /* 6 slides * 100vw */
+            transition: transform 0.5s ease-in-out;
+        }
+        .nav-button {
+            transition: all 0.2s;
+        }
+        .nav-button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+    <div class="slide-container" id="slideContainer">
+        
+        <!-- SLIDE 1: Title & Status -->
+        <div class="slide flex flex-col justify-center items-center text-center">
+            <h1 class="text-6xl font-extrabold text-green-700 mb-4 tracking-tight">
+                The Alabama Red-Bellied Turtle
+            </h1>
+            <p class="text-3xl font-semibold text-gray-600 mb-10">
+                <span class="text-red-600">Endangered Species Spotlight</span> | AI Class Research Project
+            </p>
+            <div class="w-64 h-64 bg-green-500 rounded-full flex items-center justify-center shadow-xl">
+                <span class="text-white text-5xl font-bold">🐢 IMAGE</span>
+            </div>
+            <p class="mt-8 text-xl text-gray-700 font-medium">
+                Scientific Name: <span class="font-mono bg-green-100 px-2 py-1 rounded-lg">Pseudemys alabamensis</span>
+            </p>
+        </div>
+
+        <!-- SLIDE 2: Description & Habitat -->
+        <div class="slide flex flex-col justify-start">
+            <h2 class="text-4xl font-bold text-green-700 mb-8 border-b-4 border-green-200 pb-2">
+                Species Overview & Home Range
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 flex-grow">
+                
+                <!-- Description -->
+                <div>
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-3 flex items-center">
+                        <span class="mr-2 text-red-500">🔴</span> Key Characteristics
+                    </h3>
+                    <ul class="space-y-3 text-lg text-gray-600 list-disc pl-5">
+                        <li>**Size:** Large freshwater turtle, carapace (top shell) up to 13-15 inches.</li>
+                        <li>**Appearance:** Named for its distinct red, orange, or pale yellow **plastron** (bottom shell). Carapace is typically dark olive or brown.</li>
+                        <li>**Distinction:** Has a prominent **notch** at the tip of the upper jaw, bordered by a tooth-like cusp.</li>
+                        <li>**Status:** Federally **Endangered** (since 1987) and the **Official State Reptile of Alabama** (since 1990).</li>
+                        <li>**Diet:** Primarily **herbivorous**, feeding on submerged aquatic vegetation (like hydrilla and eel-grass).</li>
+                    </ul>
+                </div>
+
+                <!-- Habitat -->
+                <div>
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-3 flex items-center">
+                        <span class="mr-2 text-blue-500">🌊</span> Habitat & Location
+                    </h3>
+                    <ul class="space-y-3 text-lg text-gray-600 list-disc pl-5">
+                        <li>**Home:** Critically restricted to the **Mobile-Tensaw River Delta** ecosystem.</li>
+                        <li>**In Alabama:** Found almost exclusively in **Mobile** and **Baldwin** Counties.</li>
+                        <li>**Preference:** Shallow, slow-moving, **freshwater** (to slightly brackish) backwaters, rivers, and bayous.</li>
+                        <li>**Crucial Features:** Requires abundant submerged aquatic vegetation (for food) and sun-exposed **basking logs** (for thermoregulation).</li>
+                    </ul>
+                    <div class="mt-5 p-3 bg-red-100 text-red-700 rounded-xl font-medium">
+                        ⚠️ **Critical Area:** Mobile Bay Causeway (US 90/98) is a key nesting area where vehicle mortality is a major threat.
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- SLIDE 3: Nesting and Movement -->
+        <div class="slide flex flex-col justify-start">
+            <h2 class="text-4xl font-bold text-green-700 mb-8 border-b-4 border-green-200 pb-2">
+                Nesting Habits & Aquatic Movement
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 flex-grow">
+                
+                <!-- Nesting -->
+                <div>
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-3 flex items-center">
+                        <span class="mr-2 text-yellow-600">🥚</span> Nesting Details
+                    </h3>
+                    <ul class="space-y-3 text-lg text-gray-600 list-disc pl-5">
+                        <li>**Season:** Typically from **April to early August**, peaking in June and July.</li>
+                        <li>**Location:** Females leave the water to nest on dry, sandy land: natural levees, sandbars, and especially **dredge spoil sites** (like Gravine Island).</li>
+                        <li>**Nest:** A shallow nest is excavated, usually containing **4 to 15 eggs** (average clutch size ~13).</li>
+                        <li>**Hatching:** Hatchlings emerge in the fall (September-November), but those laid late in the season often **overwinter** in the nest until the following spring.</li>
+                        <li>**Major Threat:** Nest predation is extremely high (>90%) by raccoons, feral hogs, fish crows, and fire ants.</li>
+                    </ul>
+                </div>
+
+                <!-- Movement -->
+                <div>
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-3 flex items-center">
+                        <span class="mr-2 text-teal-600">💨</span> Movement and Behavior
+                    </h3>
+                    <ul class="space-y-3 text-lg text-gray-600 list-disc pl-5">
+                        <li>**Primary Motion:** Excellent swimmers, using their webbed feet as powerful paddles in the water.</li>
+                        <li>**Land Motion:** Slow and deliberate on land. They pull themselves using their legs, leaving a characteristic trail, especially in soft sand.</li>
+                        <li>**Basking:** They spend significant time sunning themselves on logs or floating vegetation to regulate body temperature. They are **highly wary** while basking and will quickly submerge at the slightest disturbance.</li>
+                    </ul>
+                    <div class="mt-5 p-3 bg-teal-100 text-teal-700 rounded-xl font-medium">
+                        💡 **AI Note:** Their movement pattern on land (from water to nest and back) is predictable, making the tracks they leave along banks and spoil sites crucial for detection.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 4: Tracking Model Focus: Tracks and Prints -->
+        <div class="slide flex flex-col justify-start">
+            <h2 class="text-4xl font-bold text-green-700 mb-8 border-b-4 border-green-200 pb-2">
+                Tracks for AI Tracking Model Development
+            </h2>
+
+            <p class="text-xl text-gray-700 mb-6">
+                River and pond turtles leave a distinct trail composed of individual foot impressions, claw marks, and sometimes a drag mark from the tail or shell.
+            </p>
+            
+            <div class="flex flex-col md:flex-row gap-6 h-full">
+                <!-- Track Simulation Area -->
+                <div id="trackArea" class="relative bg-yellow-100 p-6 rounded-xl border-4 border-yellow-300 w-full md:w-2/3 h-80 overflow-hidden">
+                    <h3 class="text-xl font-bold text-yellow-800 mb-4">Simulated ARBT Track in Sand (Click to Analyze)</h3>
+                    
+                    <!-- Base Track (Placeholder representation of a trail) -->
+                    <div class="absolute w-full h-full top-0 left-0 p-6">
+                        <!-- Left side track -->
+                        <div class="absolute top-16 left-8 w-12 h-16 bg-yellow-400 opacity-60 rounded-lg"></div>
+                        <div class="absolute top-32 left-12 w-12 h-16 bg-yellow-400 opacity-60 rounded-lg"></div>
+                        <!-- Right side track -->
+                        <div class="absolute top-20 right-8 w-12 h-16 bg-yellow-400 opacity-60 rounded-lg"></div>
+                        <div class="absolute top-36 right-12 w-12 h-16 bg-yellow-400 opacity-60 rounded-lg"></div>
+                        <!-- Drag Mark -->
+                        <div class="absolute h-full w-2 bg-yellow-400 opacity-30 left-1/2 -ml-1"></div>
+                    </div>
+
+                    <!-- Interactive Overlays -->
+                    <div data-feature="claw" class="absolute top-16 left-8 w-12 h-16 cursor-pointer hover:bg-red-300 hover:opacity-50 transition duration-150 rounded-lg" onclick="showFeature('Claw Marks', 'Sharp, distinct impressions often left by the long fore claws, critical for grip on land.')"></div>
+                    <div data-feature="web" class="absolute top-36 right-12 w-12 h-16 cursor-pointer hover:bg-blue-300 hover:opacity-50 transition duration-150 rounded-lg" onclick="showFeature('Webbed Foot Impression', 'Oval-shaped impression with splayed toe marks; the webbing may not always imprint clearly.')"></div>
+                    <div data-feature="drag" class="absolute h-full w-2 cursor-pointer hover:bg-green-300 hover:opacity-50 left-1/2 -ml-1" onclick="showFeature('Tail/Shell Drag', 'A central, intermittent line caused by the shell or tail dragging in the sand. This indicates the direction of travel.')"></div>
+
+                    <div id="featureOutput" class="absolute bottom-4 left-4 right-4 bg-gray-900 text-white p-3 rounded-lg text-sm transition-opacity opacity-0">
+                        Click on a highlighted track area to see its feature!
+                    </div>
+                </div>
+
+                <!-- AI Modeling Strategy -->
+                <div class="w-full md:w-1/3">
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-3 flex items-center">
+                        <span class="mr-2 text-indigo-500">🧠</span> AI Tracking Strategy
+                    </h3>
+                    <ul class="space-y-3 text-lg text-gray-600 list-disc pl-5">
+                        <li>**Data Input:** Use high-resolution images of known nesting beach sand to train a Convolutional Neural Network (CNN).</li>
+                        <li>**Feature Detection:** The model should prioritize detecting the **claw marks** and the **overall width** of the trail (not just individual footprints).</li>
+                        <li>**Objective:** Distinguish ARBT tracks from common nest predators (raccoon, armadillo, hog prints) which have different digit counts and stride patterns.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 5: Conservation Threats & Actions -->
+        <div class="slide flex flex-col justify-start">
+            <h2 class="text-4xl font-bold text-green-700 mb-8 border-b-4 border-green-200 pb-2">
+                Major Threats & Recovery Efforts
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 flex-grow">
+                
+                <!-- Threats -->
+                <div>
+                    <h3 class="text-2xl font-semibold text-red-700 mb-3 flex items-center">
+                        <span class="mr-2">🔥</span> Primary Threats
+                    </h3>
+                    <ul class="space-y-4 text-lg text-gray-600 list-disc pl-5">
+                        <li>**Habitat Loss:** Dredging, pollution, and development in the Mobile-Tensaw Delta reducing vegetated backwaters and basking sites.</li>
+                        <li>**Vehicle Mortality:** Females nesting along the Mobile Bay Causeway (US 90/98) are frequently killed crossing the road.</li>
+                        <li>**Nest Predation:** Extremely high rates of predation on eggs by feral hogs, raccoons, and fire ants due to concentrated nesting sites.</li>
+                        <li>**Hybridization:** Mixing with other *Pseudemys* species (like river cooters) due to habitat changes, reducing the genetic uniqueness of the species.</li>
+                        <li>**Sea Level Rise:** Increasing salinity in brackish areas due to climate change may make habitat less suitable.</li>
+                    </ul>
+                </div>
+
+                <!-- Recovery Actions -->
+                <div>
+                    <h3 class="text-2xl font-semibold text-blue-700 mb-3 flex items-center">
+                        <span class="mr-2">🛡️</span> Conservation Actions
+                    </h3>
+                    <ul class="space-y-4 text-lg text-gray-600 list-disc pl-5">
+                        <li>**Protective Fencing:** Installation of chain-link fences along the Mobile Causeway to funnel turtles to safe crossing areas, significantly reducing mortality.</li>
+                        <li>**Habitat Management:** Protecting and restoring key basking, feeding, and nesting sites, particularly around Gravine Island.</li>
+                        <li>**Population Monitoring:** Systematic sampling and tracking (where your AI model comes in!) to assess population trend and health.</li>
+                        <li>**Predator Control:** Management programs to control feral hog populations on key nesting islands.</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- SLIDE 6: Resources and Further Information -->
+        <div class="slide flex flex-col justify-start">
+            <h2 class="text-4xl font-bold text-green-700 mb-8 border-b-4 border-green-200 pb-2">
+                Additional Resources & Videos
+            </h2>
+            <p class="text-xl text-gray-700 mb-6">
+                Use these links for detailed species reports, conservation plans, and video footage of the turtle in its habitat.
+            </p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                
+                <!-- Official Links -->
+                <div class="bg-gray-50 p-6 rounded-xl shadow-lg">
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-4 flex items-center">
+                        <span class="mr-2 text-gray-500">📝</span> Official Reports & Data
+                    </h3>
+                    <ul class="space-y-4 text-lg">
+                        <li>
+                            <a href="https://www.outdooralabama.com/turtles/alabama-red-bellied-turtle" target="_blank" class="text-blue-600 hover:text-blue-800 font-medium underline">
+                                Alabama Red-bellied Turtle | Outdoor Alabama
+                            </a>
+                            <p class="text-sm text-gray-500 mt-1">Detailed species information from the State of Alabama.</p>
+                        </li>
+                        <li>
+                            <a href="https://ecos.fws.gov/docs/recovery_plan/Alabama%20Red-bellied%20Turtle%20Recovery%20Plan.pdf" target="_blank" class="text-blue-600 hover:text-blue-800 font-medium underline">
+                                Revised Recovery Plan (PDF) | U.S. Fish & Wildlife Service
+                            </a>
+                            <p class="text-sm text-gray-500 mt-1">The full federal recovery document outlining goals and criteria.</p>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Video Resources -->
+                <div class="bg-gray-50 p-6 rounded-xl shadow-lg">
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-4 flex items-center">
+                        <span class="mr-2 text-red-500">🎬</span> Videos & Footage
+                    </h3>
+                    <ul class="space-y-4 text-lg">
+                        <li>
+                            <a href="https://www.youtube.com/watch?v=7AJQRYBRfP4" target="_blank" class="text-blue-600 hover:text-blue-800 font-medium underline">
+                                Alabama Red-Bellied Turtle - Mobile Delta Footage
+                            </a>
+                            <p class="text-sm text-gray-500 mt-1">Video discussing threats and conservation efforts.</p>
+                        </li>
+                        <li>
+                            <a href="https://www.youtube.com/watch?v=jOORnuI1V80" target="_blank" class="text-blue-600 hover:text-blue-800 font-medium underline">
+                                Checking out the Alabama Red Bellied Turtle!!
+                            </a>
+                            <p class="text-sm text-gray-500 mt-1">A look at the turtle and its environment in the Mobile drainages.</p>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+        
+    </div>
+
+    <!-- Navigation Controls -->
+    <div class="fixed bottom-0 left-0 right-0 p-4 bg-white border-t-2 border-gray-200 flex justify-center space-x-4 shadow-2xl">
+        <button id="prevBtn" class="nav-button bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-xl shadow-lg disabled:opacity-50" disabled>
+            ← Previous
+        </button>
+        <div id="slideIndicator" class="text-xl font-bold text-gray-700 flex items-center">
+            Slide 1 of 6
+        </div>
+        <button id="nextBtn" class="nav-button bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-xl shadow-lg">
+            Next →
+        </button>
+    </div>
+
+    <script>
+        // --- Slide Navigation Logic ---
+        const slideContainer = document.getElementById('slideContainer');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const slideIndicator = document.getElementById('slideIndicator');
+        const totalSlides = 6;
+        let currentSlide = 0; // 0-indexed
+
+        const updateSlide = () => {
+            // Move the slide container
+            const offset = currentSlide * -100;
+            slideContainer.style.transform = `translateX(${offset}vw)`;
+
+            // Update navigation buttons
+            prevBtn.disabled = currentSlide === 0;
+            nextBtn.disabled = currentSlide === totalSlides - 1;
+            
+            // Update indicator
+            slideIndicator.textContent = `Slide ${currentSlide + 1} of ${totalSlides}`;
+        };
+
+        const goToNext = () => {
+            if (currentSlide < totalSlides - 1) {
+                currentSlide++;
+                updateSlide();
+            }
+        };
+
+        const goToPrev = () => {
+            if (currentSlide > 0) {
+                currentSlide--;
+                updateSlide();
+            }
+        };
+
+        // Attach event listeners
+        nextBtn.addEventListener('click', goToNext);
+        prevBtn.addEventListener('click', goToPrev);
+        
+        // Initial state
+        updateSlide();
+        
+        // --- Track Feature Explorer Logic (Slide 4) ---
+        const featureOutput = document.getElementById('featureOutput');
+        
+        /**
+         * Updates the feature output box on the track simulation slide.
+         * @param {string} title - The title of the track feature.
+         * @param {string} description - The description/significance of the feature.
+         */
+        function showFeature(title, description) {
+            featureOutput.innerHTML = `<span class="font-bold">${title}:</span> ${description}`;
+            featureOutput.classList.remove('opacity-0');
+            featureOutput.classList.add('opacity-100');
+        }
+        
+        // Hide the message after a short delay if the user doesn't interact immediately
+        setTimeout(() => {
+             if (featureOutput.textContent === "Click on a highlighted track area to see its feature!") {
+                 featureOutput.classList.remove('opacity-100');
+                 featureOutput.classList.add('opacity-0');
+             }
+        }, 4000);
+
+    </script>
+</body>
+</html>

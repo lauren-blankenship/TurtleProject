@@ -42,20 +42,27 @@
     <div class="slide-container" id="slideContainer">
         
         <!-- SLIDE 1: Title & Status -->
-        <div class="slide flex flex-col justify-center items-center text-center">
-            <h1 class="text-6xl font-extrabold text-green-700 mb-4 tracking-tight">
-                The Alabama Red-Bellied Turtle
-            </h1>
-            <p class="text-3xl font-semibold text-gray-600 mb-10">
-                <span class="text-red-600">Endangered Species Spotlight</span> | AI Class Research Project
-            </p>
-            <div class="w-64 h-64 bg-green-500 rounded-full flex items-center justify-center shadow-xl">
-                <span class="text-white text-5xl font-bold">🐢 IMAGE</span>
-            </div>
-            <p class="mt-8 text-xl text-gray-700 font-medium">
-                Scientific Name: <span class="font-mono bg-green-100 px-2 py-1 rounded-lg">Pseudemys alabamensis</span>
-            </p>
+        <div class="w-64 h-64 sm:w-80 sm:h-80 rounded-full overflow-hidden shadow-2xl border-4 border-green-700 mx-auto transition duration-300 hover:shadow-green-500/50">
+            <img src="https://encyclopediaofalabama.org/wp-content/uploads/2023/04/Alabama-red-bellied-turtle.jpg" 
+                 alt="The Alabama Red-Bellied Turtle" 
+                 class="w-full h-full object-cover transition duration-500 transform hover:scale-105"
+                 <!-- Fallback image in case the original URL fails -->
+                 onerror="this.onerror=null; this.src='https://placehold.co/320x320/047857/ffffff?text=Image+Unavailable';">
         </div>
+        
+        <!-- Scientific Name -->
+        <p class="mt-10 text-lg sm:text-xl text-gray-700 font-medium"> 
+            Scientific Name: 
+            <span class="font-mono bg-green-100 text-green-800 px-3 py-1 rounded-lg text-lg sm:text-xl shadow-inner">
+                Pseudemys alabamensis
+            </span> 
+        </p> 
+        
+        <!-- Call to Action/Next Slide Indicator -->
+        <p class="mt-16 text-md text-gray-500 animate-pulse">
+            Scroll down for more information...
+        </p>
+    </div>
 
         <!-- SLIDE 2: Description & Habitat -->
         <div class="slide flex flex-col justify-start">
